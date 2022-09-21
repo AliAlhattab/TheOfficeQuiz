@@ -1,7 +1,8 @@
 import './App.scss';
 import Nav from './components/Nav/Nav';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Homepage from './pages/Homepage';
+import Leaderboard from './pages/Leaderboard';
 
 
 function App() {
@@ -10,7 +11,12 @@ function App() {
     <div>
       <Nav/>
       <Routes>
-        <Route path='/' exact element={<Homepage/>}/>
+        <Route
+        path="*"
+        element={<Navigate to="/home" replace />}
+    />
+        <Route path='/home' exact element={<Homepage/>}/>
+        <Route path='/leadersboard' exact element={<Leaderboard/>}/>
       </Routes>
     </div>
     </BrowserRouter>

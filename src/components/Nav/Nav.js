@@ -1,14 +1,19 @@
 import React from 'react'
 import './Nav.scss'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+let refresh = () => {
+return window.location.reload();
+}
+
 
 function Nav() {
   return (
     <nav className='nav'>
-        <Link className='nav__options' to='/'><div className='nav__logo'></div></Link>
+        <NavLink className='nav__links' to='/home' exact><div className='nav__logo'></div></NavLink>
         <ul className='nav__list'>
-            <Link className='nav__options' to='/'><li className='nav__options'>Home</li></Link>
-            <Link className='nav__options' to='/leadersboard'><li className='nav__options'>Leaderboard</li></Link>
+            <NavLink to='/home' exact className={({ isActive }) => "nav__options" + (isActive ? "--selected" : "")} ><li className='nav__options'>Home</li></NavLink>
+            <NavLink to='/leadersboard' className={({ isActive }) => "nav__options" + (isActive ? "--selected" : "")}><li className='nav__options'>Leadersboard</li></NavLink>
         </ul>
     </nav>
   )

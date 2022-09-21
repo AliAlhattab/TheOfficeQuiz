@@ -7,6 +7,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @include tablet{
+        padding-bottom: 0.5rem;
+    }
 
 
     &__logo{
@@ -36,6 +40,7 @@
         display: flex;
         list-style: none;
         text-decoration: none;
+        padding: 0 1rem;
     }
 
     &__options{
@@ -48,6 +53,13 @@
         &:hover{
             color: $hover;
             transition: 0.5s;
+        }
+
+        &--selected{
+            border-bottom: 2px solid $primary-text;
+            text-decoration: none;
+            padding-bottom: 0.5rem;
+            transition: 0.5s
         }
 
         @include tablet{

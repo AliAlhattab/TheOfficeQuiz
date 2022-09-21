@@ -1,8 +1,11 @@
 import React from 'react'
+import GameStart from '../components/GameStart/GameStart'
 
 function Homepage() {
   return (
-    <div>Homepage</div>
+    <section>
+      <GameStart/>
+    </section>
   )
 }
 
