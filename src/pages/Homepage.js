@@ -1,10 +1,11 @@
 import React from 'react'
-import GameStart from '../components/GameStart/GameStart'
+import Hero from '../components/Hero/Hero'
+
 
 function Homepage() {
   return (
     <section>
-      <GameStart/>
+      <Hero/>
     </section>
   )
 }
