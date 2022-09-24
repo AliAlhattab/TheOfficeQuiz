@@ -1,0 +1,76 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.form{
+    background-color: $primary-background;
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+
+    &__name{
+        box-sizing: border-box;
+        width: 100%;
+        height: 1.8rem;
+        padding: 0 0.5rem 0 0.5rem;
+        border-radius: 1rem;
+        border: 1px solid $primary-text;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        outline: none;
+        transition: 0.5s;
+
+        @include mobile__labels-links-buttons;
+
+        &:focus{
+            transition: 0.5s;
+            width: 15.63rem;
+        }
+
+        &:hover{
+            transition: 0.5s;
+            width: 15.63rem;
+        }
+
+        @include tablet {
+            width: 12.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    &__text{
+        color: $primary-text;
+        @include mobile__body-large;
+    }
+
+    &__submit{
+
+
+    }
+
+    &__button{
+        margin: 1rem 0;
+        height: 2.25rem;
+        padding: 0 1rem;
+        width: 100%;
+        border-radius: 1.25rem;
+        border: none;
+        background-color: $button;
+        color: $primary-text;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        border: 1px solid $primary-background;
+        transition: 0.5s;
+
+        @include mobile__labels-links-buttons;
+
+        &:hover{
+            transition: 0.5s;
+            background-color: $primary-background;
+            border: 1px solid $button;
+        }
+
+        @include tablet {
+            width: 18.75rem;
+            height: 4rem;
+        }
+
+    }
+}
