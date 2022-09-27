@@ -15,7 +15,7 @@ function App() {
         path="*"
         element={<Navigate to="/home" replace />}
     />
-        <Route path='/home' exact element={<Homepage/>}/>
+        <Route path='/home' element={<Homepage/>}/>
         <Route path='/leadersboard' exact element={<Leaderboard/>}/>
       </Routes>
     </div>
