@@ -10,7 +10,7 @@ function TextInput() {
   const isValid = name != null && name.trim().length > 0;
 
   if (goToGame) {
-    return <Navigate to='/leadersboard'/>
+    return <Navigate to='/game'/>
   }
 
   let changeHandler = (e) => {
