@@ -30,7 +30,6 @@ function TextInput() {
       .catch((err) => {
         console.log('something went wrong')
       })
-
   }
 
   let capitalizeFirstLetter = (string) => {
