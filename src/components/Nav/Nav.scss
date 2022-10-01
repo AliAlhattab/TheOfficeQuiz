@@ -21,7 +21,7 @@
         height: 1rem;
         background-size: contain;
         background-repeat: no-repeat;
-        margin: 1rem;
+        margin: 1rem 0 1rem 1rem;
         cursor: pointer;
         filter: invert(1);
        
@@ -43,7 +43,11 @@
         display: flex;
         list-style: none;
         text-decoration: none;
-        padding: 0 1rem;
+        padding: 0;
+
+        @include tablet{
+            padding: 1rem;
+        }
         
     }
 
