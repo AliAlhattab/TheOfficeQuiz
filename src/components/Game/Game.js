@@ -25,7 +25,7 @@ function Game() {
       console.log('Cannot get quote')
     });
 
-  }, [])
+  }, [counter])
 
   useEffect(() => {
     axios
@@ -40,13 +40,8 @@ function Game() {
       console.log('Cannot get character')
     });
 
-  }, [])
+  }, [counter])
 
-  useEffect(() => {
-
-
-
-  }, [])
 
   if (goToLeadersboard) {
     return <Navigate to='/leadersboard'/>
@@ -57,7 +52,9 @@ function Game() {
 
     if(e.target.value === name) {
       getCounter(counter + 1)
-      
+
+    
+
     } else {
       setGoToLeadersboard(true)
       alert(`Good Try! Your Score is: ${counter}`)
