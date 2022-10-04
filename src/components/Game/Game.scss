@@ -59,9 +59,14 @@
 
         @include tablet{
             @include tablet__body-medium;
-
+            margin: 1rem 4rem;
             padding: 2.5rem;
         }
+
+        @include desktop {
+            margin: 1rem 8rem;
+        }
+
 
     }
 
