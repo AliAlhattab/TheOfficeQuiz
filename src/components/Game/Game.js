@@ -14,6 +14,10 @@ function Game() {
   const [counter, getCounter] = useState(0)
   const [goToLeadersboard, setGoToLeadersboard] = useState(false);
 
+  const myArray = [name, randomName1, randomName2, randomName3];
+  const shuffledArray = myArray.sort((a, b) => 0.5 - Math.random());
+  console.log(shuffledArray)
+
   useEffect(() => {
     axios
     .get('https://www.officeapi.dev/api/quotes/random')
@@ -57,7 +61,7 @@ function Game() {
 
     } else {
       setGoToLeadersboard(true)
-      alert(`Good Try! Your Score is: ${counter}`)
+      alert(`Good Try! Your Score is: ${counter} | the correct answer was ${name}`)
     }
 
   }
@@ -76,10 +80,10 @@ function Game() {
       <h1 className='game__quote'>{quote}</h1>
       </div>
       <div className='game__button'>
-      <button className='game__option' value={name} onClick={submit}>{name}</button>
-      <button className='game__option' value={randomName1} onClick={submit}>{randomName1}</button>
-      <button className='game__option' value={randomName2} onClick={submit}>{randomName2}</button>
-      <button className='game__option' value={randomName3} onClick={submit}>{randomName3}</button>
+      <button className='game__option' value={myArray[0]} onClick={submit}>{myArray[0]}</button>
+      <button className='game__option' value={myArray[1]} onClick={submit}>{myArray[1]}</button>
+      <button className='game__option' value={myArray[2]} onClick={submit}>{myArray[2]}</button>
+      <button className='game__option' value={myArray[3]} onClick={submit}>{myArray[3]}</button>
       </div>
       <div className='game__counter'>
         <p className='game__score'>Your Score: {counter}</p>
