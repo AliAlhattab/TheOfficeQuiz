@@ -26,6 +26,8 @@ function TextInput() {
       })
       .then((response) => {
         setGoToGame(true)
+        console.log(response);
+        sessionStorage.setItem('id', response.data.id);
       })
       .catch((err) => {
         console.log('something went wrong')

@@ -16,7 +16,6 @@ function Game() {
 
   const myArray = [name, randomName1, randomName2, randomName3];
   const shuffledArray = myArray.sort((a, b) => 0.5 - Math.random());
-  console.log(shuffledArray)
 
   useEffect(() => {
     axios
@@ -62,6 +61,7 @@ function Game() {
     } else {
       setGoToLeadersboard(true)
       alert(`Good Try! Your Score is: ${counter} | the correct answer was ${name}`)
+      sessionStorage.removeItem('id');
     }
 
   }
