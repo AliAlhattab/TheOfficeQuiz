@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Leadersboard() {
+
+
   return (
     <section className='leadersboard'>
         <div className='leadersboard__title'>

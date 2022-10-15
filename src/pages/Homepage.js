@@ -4,6 +4,9 @@ import TextInput from '../components/TextInput/TextInput'
 
 
 function Homepage() {
+
+  sessionStorage.removeItem('id');
+
   return (
     <section>
       <Hero/>

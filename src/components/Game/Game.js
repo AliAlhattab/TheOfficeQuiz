@@ -17,6 +17,8 @@ function Game() {
   const myArray = [name, randomName1, randomName2, randomName3];
   const shuffledArray = myArray.sort((a, b) => 0.5 - Math.random());
 
+  const playerId = sessionStorage.getItem('id')
+
   useEffect(() => {
     axios
     .get('https://www.officeapi.dev/api/quotes/random')
@@ -56,12 +58,20 @@ function Game() {
     if(e.target.value === name) {
       getCounter(counter + 1)
 
-    
-
     } else {
       setGoToLeadersboard(true)
       alert(`Good Try! Your Score is: ${counter} | the correct answer was ${name}`)
-      sessionStorage.removeItem('id');
+
+      axios
+      .put(`http://localhost:8080/players/${playerId}`, {
+        score: counter
+      })
+      .then((response) => {
+        console.log('score updated')
+      })
+      .catch(() => {
+        console.log('failed to update score')
+      })
     }
 
   }
