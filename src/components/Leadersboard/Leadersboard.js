@@ -12,7 +12,9 @@ function Leadersboard() {
         axios
         .get('http://localhost:8080/players')
         .then(response => {
-            getLeaderboard(response.data)
+            
+            getLeaderboard(response.data.sort((a, b) => b.score - a.score));
+
         }, [])
 
     })
@@ -32,9 +34,8 @@ function Leadersboard() {
                 <li className='leadersboard__section'>Score</li>
             </ul>
         </div>
-        { leaderboard.map((data) =>{
-
-            //  let sortedScore = leaderboard.map(data => +data.score).sort((a, b) => b - a);
+        { leaderboard.map((data) => {
+           
 
             return(
                 <div className='leadersboard__players'>
@@ -46,7 +47,7 @@ function Leadersboard() {
             </div>
 
             )
-        })
+        }) 
 }
 </div>
     </section>

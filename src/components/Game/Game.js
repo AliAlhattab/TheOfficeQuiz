@@ -76,8 +76,6 @@ function Game() {
 
   }
 
-  
-
   return (
     <form className='game'>
       <div className='game__image'>
