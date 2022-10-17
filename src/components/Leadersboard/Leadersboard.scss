@@ -1,0 +1,81 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.leadersboard{
+
+    background-color: $primary-background;
+    color: $primary-text;
+    padding-bottom: 1rem;
+
+
+    &__container{
+        box-shadow: 0 0 4px $button;
+        margin: 0rem 2rem 1rem 2rem;
+        background: $primary-background;
+        padding-bottom: 1rem;
+        padding-top: 0.3rem;
+
+        @include tablet {
+            margin: 0 5rem;
+        }
+
+        @include desktop {
+            margin: 0 10rem;
+        }
+    }
+
+    &__title{
+        @include mobile__page-header;
+        text-align: center;
+
+        @include tablet {
+            @include tablet__page-header;
+        }
+    }
+
+    &__text{
+    margin: 0 1rem 1rem 1rem;
+    padding-top: 2rem;
+    }
+
+    &__info{
+        
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem 1rem 2rem;
+        border-bottom: 1px solid $primary-text;
+    }
+
+    &__section{
+        @include mobile__body-medium;
+
+        @include tablet{
+            @include tablet__body-medium
+        }
+    }
+
+    &__players{
+        @include mobile__body-medium;
+
+        @include tablet{
+            @include tablet__body-medium
+        }
+    }
+
+    &__rankList{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    &__rank{
+
+    }
+
+}
